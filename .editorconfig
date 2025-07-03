@@ -1,0 +1,15 @@
+[*]
+indent_style = space
+indent_size = 2
+insert_final_newline = true
+
+[*.{cs,cshtml}]
+indent_size = 4
+dotnet_diagnostic.SA1101.severity = silent
+dotnet_diagnostic.SA1600.severity = silent
+dotnet_diagnostic.CS1591.severity = silent
+
+[src/obj/**/**]
+dotnet_diagnostic.SA1518.severity = none
+dotnet_diagnostic.CS1570.severity = none
+dotnet_diagnostic.CS1587.severity = none
