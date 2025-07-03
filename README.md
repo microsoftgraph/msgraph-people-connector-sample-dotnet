@@ -24,7 +24,7 @@ Update the `people` object to reflect the users you would like to enrich using t
 
 This sample uses a command line interface (CLI).
 
-- Use `dotnet run create` to create the Copilot connector using Microsoft Graph.
+- Use `dotnet run setup` to create the Copilot connector using Microsoft Graph.
 - Use `dotnet run register` to register the connection as a source of people data.
 - Use `dotnet run sync` to ingest the people data into Microsoft Graph.
 
