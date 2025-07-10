@@ -8,11 +8,18 @@ using Microsoft.Graph.Beta.Models.ExternalConnectors;
 using Microsoft.Kiota.Authentication.Azure;
 
 // Constants for the Contoso HR Connector
+// TODO: Modify these constants to match your environment
+// The connector ID and name are used to identify the connector in Microsoft Graph
+// The connector ID should be unique across all connectors in your tenant
+// The connector name is used to display the connector in the Microsoft Graph UI
 const string CONNECTOR_ID = "contosohrconnector";
 const string CONNECTOR_NAME = "Contoso HR Connector";
 
 // The people data to be synced
 // This is a sample data structure that would typically be fetched from an external HR system
+// TODO: Modify this data structure to match your external HR system
+// TODO: If you want to add additional people, simply add them to the array and modify the schema and sync logic accordingly
+// The schema is defined in the setup command and the sync logic will create or update external items in the connector
 var people = new[]
 {
     new { UPN = "alexw@contoso.com",
@@ -65,6 +72,8 @@ setupCommand.SetAction(async parsedResult =>
     }
 
     Console.WriteLine("Configuring the schema, this may take a few minutes...");
+    // This is the schema that will be used to store the people data in the connector
+    // TODO: Modify this schema to match your external HR system
     var requestInfo = graphClient.External.Connections[newConnection.Id].Schema.ToPatchRequestInformation(new Microsoft.Graph.Beta.Models.ExternalConnectors.Schema
     {
         BaseType = "microsoft.graph.externalItem",
@@ -197,6 +206,8 @@ syncCommand.SetAction(async parsedResult =>
             ],
             Properties = new Properties
             {
+                // TODO: Modify this to match your external HR system and the schema defined in the setup command
+                // The properties are serialized as JSON strings in the AdditionalData dictionary
                 AdditionalData = new Dictionary<string, object>
                 {
                     { "accounts", JsonSerializer.Serialize(new[]
