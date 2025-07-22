@@ -36,7 +36,7 @@ This connector requires an Entra ID application to registered. Follow these step
 
 ### Set up authorization to Microsoft Graph
 
-To connect the application to Microsoft Graph using the Entra ID app registration, run the following commands in the terminal window, in the directory of the console application where you cloned or copied the sample code. Replace the client ID, tenant ID, and client secret with the values you stored in a safe location.
+To connect the application to Microsoft Graph using the Entra ID app registration, run the following commands in the terminal window, in the `src` directory of the console application where you cloned or copied the sample code. Replace the client ID, tenant ID, and client secret with the values you stored in a safe location.
 
 ``` bash
 dotnet user-secrets init
